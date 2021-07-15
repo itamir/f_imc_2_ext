@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
   void _resetCampos() {
     pesoController.clear();
     alturaController.clear();
-    _formKey = GlobalKey<FormState>();
+    _formKey.currentState.reset();
   }
 
   @override
@@ -72,23 +72,25 @@ class _HomeState extends State<Home> {
                   if (value.isEmpty) return "Insira sua altura!";
                 },
               ),
-              Container(
-                  height: 50.0,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState.validate()) {
-                        _calcular();
-                      }
-                    },
-                    child: Text(
-                      "Calcular",
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
-                        textStyle: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold)),
-                  )),
+              Padding(
+                  padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  child: Container(
+                      height: 50.0,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            _calcular();
+                          }
+                        },
+                        child: Text(
+                          "Calcular",
+                          style: TextStyle(color: Colors.white, fontSize: 20.0),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.blue,
+                            textStyle: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold)),
+                      ))),
             ], //<widget>[]
           ),
         ),
