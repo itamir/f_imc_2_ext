@@ -50,7 +50,10 @@ class _HomeState extends State<Home> {
                 style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
                 controller: pesoController,
                 validator: (value) {
-                  if (value.isEmpty) return "Insira seu peso!";
+                  if (value.isEmpty)
+                    return "Insira seu peso!";
+                  else
+                    return null;
                 },
               ),
               TextFormField(
@@ -62,7 +65,10 @@ class _HomeState extends State<Home> {
                 style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
                 controller: alturaController,
                 validator: (value) {
-                  if (value.isEmpty) return "Insira sua altura!";
+                  if (value.isEmpty)
+                    return "Insira sua altura!";
+                  else
+                    return null;
                 },
               ),
               Padding(
@@ -80,7 +86,7 @@ class _HomeState extends State<Home> {
                           style: TextStyle(color: Colors.white, fontSize: 20.0),
                         ),
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            //  primary: Colors.blue,
                             textStyle: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold)),
                       ))),
