@@ -9,7 +9,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   TextEditingController pesoController = TextEditingController();
   TextEditingController alturaController = TextEditingController();
-
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
 
   void _resetCampos() {
