@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   void _resetCampos() {
     pesoController = TextEditingController();
     alturaController = TextEditingController();
-    _formKey.currentState.reset();
+    _formKey.currentState!.reset();
   }
 
   @override
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                 style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
                 controller: pesoController,
                 validator: (value) {
-                  if (value.isEmpty)
+                  if (value!.isEmpty)
                     return "Insira seu peso!";
                   else
                     return null;
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                 style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
                 controller: alturaController,
                 validator: (value) {
-                  if (value.isEmpty)
+                  if (value!.isEmpty)
                     return "Insira sua altura!";
                   else
                     return null;
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                       height: 50.0,
                       child: ElevatedButton(
                         onPressed: () {
-                          if (_formKey.currentState.validate()) {
+                          if (_formKey.currentState!.validate()) {
                             _calcular();
                           }
                         },
