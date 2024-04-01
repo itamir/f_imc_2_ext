@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
-  String _imagem;
-  String _texto;
+  
+  final String _imagem;
+  final String _texto;
 
   Result(this._imagem, this._texto);
 
@@ -10,8 +11,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text("Resultado"), backgroundColor: Colors.blueAccent),
-      backgroundColor: Colors.white,
+          AppBar(title: Text("Resultado"), backgroundColor: Theme.of(context).colorScheme.inversePrimary,),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

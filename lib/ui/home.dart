@@ -22,8 +22,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Calculadora de IMC"),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.refresh),
@@ -31,7 +31,6 @@ class _HomeState extends State<Home> {
           )
         ], //<Widget>[]
       ), // app bar
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
         child: Form(
@@ -39,14 +38,12 @@ class _HomeState extends State<Home> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Icon(Icons.person, size: 120, color: Colors.blueAccent),
+              Icon(Icons.person, size: 120, color: Theme.of(context).colorScheme.inversePrimary),
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText: "Peso (kg)",
-                    labelStyle: TextStyle(color: Colors.blueAccent)),
+                    labelText: "Peso (kg)"),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
                 controller: pesoController,
                 validator: (value) {
                   if (value!.isEmpty)
@@ -58,10 +55,8 @@ class _HomeState extends State<Home> {
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText: "Altura (m)",
-                    labelStyle: TextStyle(color: Colors.blueAccent)),
+                    labelText: "Altura (m)"),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.blueAccent, fontSize: 25.0),
                 controller: alturaController,
                 validator: (value) {
                   if (value!.isEmpty)
@@ -77,15 +72,8 @@ class _HomeState extends State<Home> {
                       if (_formKey.currentState!.validate()) _calcular();
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.purple,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        textStyle: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold)),
-                    child: Text(
-                      "Calcular",
-                      style: TextStyle(color: Colors.white, fontSize: 25.0),
-                    ),
+                        backgroundColor:Theme.of(context).colorScheme.inversePrimary),
+                    child: Text("Calcular"),
                   )),
             ], //<widget>[]
           ),
