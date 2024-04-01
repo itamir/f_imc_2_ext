@@ -72,23 +72,21 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                   padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                  child: Container(
-                      height: 50.0,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            _calcular();
-                          }
-                        },
-                        child: Text(
-                          "Calcular",
-                          style: TextStyle(color: Colors.white, fontSize: 20.0),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                            //  primary: Colors.blue,
-                            textStyle: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                      ))),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) _calcular();
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.purple,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        textStyle: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      "Calcular",
+                      style: TextStyle(color: Colors.white, fontSize: 25.0),
+                    ),
+                  )),
             ], //<widget>[]
           ),
         ),
